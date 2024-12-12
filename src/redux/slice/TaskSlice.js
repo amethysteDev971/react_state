@@ -123,7 +123,11 @@ const initialState = {
       description: "Faire une pause de 15 minutes loin des écrans et des distractions.", 
       completed: false 
     }
-]
+  ],
+  task:{
+    id:null,
+    
+  }
 };
 
 
@@ -150,6 +154,14 @@ const taskSlice = createSlice({
         state.list = [newTask, ...state.list]
     },
     readTask: (state, {payload}) => {},
+    readTaskById: (state, {payload}) => {
+      const id = payload
+      const {list} = state
+      const newlist = list.filter((task) => {
+        return task.id ==id
+      });
+      console.log('newlist by ID => ', newlist)
+    },
     updateTask: (state, {payload}) => {},
     deleteTask: (state, {payload}) => {
         const id = payload
@@ -164,5 +176,5 @@ const taskSlice = createSlice({
   },
 });
 
-export const {createTask,readTask,updateTask,deleteTask} = taskSlice.actions;
+export const {createTask,readTask,updateTask,deleteTask,readTaskById} = taskSlice.actions;
 export default taskSlice.reducer;

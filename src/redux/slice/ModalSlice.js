@@ -17,10 +17,30 @@ const modalSlice = createSlice({
   initialState,
   reducers: {
     closeModal: (state) => {
-      state.isOpen = false;
+        state.isOpen = false;
+        state.action = {
+            read:false,
+            update:false
+          }
     },
-    openModal: (state) => {
-      state.isOpen = true;
+    openModal: (state,{payload}) => {
+        console.log('payload => ', payload)
+        const {action} = state
+        switch (payload) {
+            case 'read':
+                // alert('read');
+                action.read = true;
+                break;
+            case 'update':
+                // alert('update');
+                break;
+            case 'delete':
+                // alert('delete');
+                break;
+            default:
+                break;
+        }
+        state.isOpen = true;
     },
   },
 });
