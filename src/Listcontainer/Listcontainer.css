@@ -1,0 +1,27 @@
+.tilecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    gap: 1rem;
+    padding-inline: 1rem;
+
+    margin-top: 2rem;
+    
+}
+
+.tile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: solid 2px aliceblue;
+    border-radius: 2px;
+    
+}
+
+button{
+    color: aliceblue;
+}

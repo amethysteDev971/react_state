@@ -1,0 +1,31 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+    gap: 1rem;
+
+   
+
+}
+
+.addInput{
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.form_add{
+    padding-inline: 1rem;
+}
+
+.form_add button{
+    background-color: rgb(198, 61, 61);
+    /* font-weight: 800; */
+}
+
