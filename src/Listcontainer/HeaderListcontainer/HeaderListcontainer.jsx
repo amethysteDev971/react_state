@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './HeaderListcontainer.css'
 
-export default function HeaderListcontainer({lastId, addItem}) {
+export default function HeaderListcontainer({addItem}) {
 
     // const [state, setState] = useState();
     const [addMode, setAddMode] = useState(false);
@@ -15,13 +15,13 @@ export default function HeaderListcontainer({lastId, addItem}) {
         console.log('Ajouter')
         const value = document.querySelector('#createTask').value
         console.log('value => ',value)
-        
-        addItem({
-            id: lastId + 1,
-            title: value,
-            description:"lorem ipsum",
-            completed: false
-        })
+        addItem(value)
+        // addItem({
+        //     id: lastId + 1,
+        //     title: value,
+        //     description:"lorem ipsum",
+        //     completed: false
+        // })
         toggleaddMode()
     }
 

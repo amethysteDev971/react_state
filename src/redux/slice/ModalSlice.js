@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+//! ################## Etat initial
 const initialState = {
   isOpen: false,
   modalType: undefined,
 };
 
+
+//! ############## slice - methode pour modifier le state
 const modalSlice = createSlice({
   name: 'modal',
   initialState,

@@ -6,13 +6,14 @@ import './ListTile.css'
 export default function ListTile({item, deleteAction}) {
    
   const dispatch = useDispatch();
-    const handleDelete = (id) => {
-        deleteAction(id)
-    }
 
-    const handleOpenModal = () => {
-      dispatch(openModal());
-    };
+  const handleDelete = (id) => {
+      deleteAction(id)
+  }
+
+  const handleOpenModal = () => {
+    dispatch(openModal());
+  };
 
   return (
 
