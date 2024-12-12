@@ -3,6 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 //! ################## Etat initial
 const initialState = {
   isOpen: false,
+  action: {
+    read:false,
+    update:false
+  },
   modalType: undefined,
 };
 

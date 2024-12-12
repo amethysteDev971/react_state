@@ -20,7 +20,7 @@ export default function ListTile({item, deleteAction}) {
        <div className='tile'>
             <p>{item.title}</p>
             <div className='action'>
-              <button onClick={handleOpenModal} className='btn-rouge'>modal</button>
+              <button onClick={handleOpenModal} className='btn-rouge'>Voir</button>
               <button onClick={()=>handleDelete(item.id)}>delete</button>
             </div>
         </div> 
