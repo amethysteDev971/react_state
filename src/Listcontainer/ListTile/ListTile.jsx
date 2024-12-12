@@ -1,6 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { openModal } from '../../redux/slice/ModalSlice';
+import { useDispatch } from 'react-redux'
+import { openModal } from '../../redux/slice/ModalSlice'
+import './ListTile.css'
 
 export default function ListTile({item, deleteAction}) {
    
