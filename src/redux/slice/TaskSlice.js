@@ -123,9 +123,9 @@ const initialState = {
       description: "Faire une pause de 15 minutes loin des écrans et des distractions.", 
       completed: false 
     }
-]
+  ],
+  selectedTask: null
 };
-
 
 //! ############## slice - methode pour modifier le state
 // Payload => datas que l'on passe à la function
@@ -149,7 +149,15 @@ const taskSlice = createSlice({
         console.log('state.list =>', state.list)
         state.list = [newTask, ...state.list]
     },
-    readTask: (state, {payload}) => {},
+    readTask: (state, {payload}) => {
+      const id = payload
+      const {list} = state
+      const selectedTask = list.find((task) => task.id == id)
+      state.selectedTask = selectedTask
+    },
+    clearSelectedTask: (state) => {
+      state.selectedTask = null
+    },
     updateTask: (state, {payload}) => {},
     deleteTask: (state, {payload}) => {
         const id = payload
@@ -161,8 +169,25 @@ const taskSlice = createSlice({
         console.log('newlist => ', newlist)
         state.list = newlist
     },
+    setCompletedTask: (state,{payload}) => {
+      const {value, id} = payload
+      if (typeof payload === "boolean") {
+        const {list} = state
+        const newlist = list.map((task) => {
+          if (task.id = id) {
+            return task = {
+              ...task,
+              completed: value
+            }
+          } else {
+            return task
+          }
+        })
+        state.list = newlist
+      }
+    },
   },
 });
 
-export const {createTask,readTask,updateTask,deleteTask} = taskSlice.actions;
+export const {createTask,readTask,updateTask,deleteTask,clearSelectedTask,setCompletedTask} = taskSlice.actions;
 export default taskSlice.reducer;

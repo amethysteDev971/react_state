@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 //! ################## Etat initial
 const initialState = {
   isOpen: false,
+  readTask:false,
   modalType: undefined,
 };
 
@@ -13,13 +14,18 @@ const modalSlice = createSlice({
   initialState,
   reducers: {
     closeModal: (state) => {
-      state.isOpen = false;
+      state.isOpen = false
+      state.readTask = false
     },
     openModal: (state) => {
-      state.isOpen = true;
+      state.isOpen = true
+    },
+    openReadModal: (state, {payload}) =>{
+        state.isOpen = true
+        state.readTask = true
     },
   },
 });
 
-export const { closeModal, openModal } = modalSlice.actions;
+export const { closeModal, openModal, openReadModal } = modalSlice.actions;
 export default modalSlice.reducer;
