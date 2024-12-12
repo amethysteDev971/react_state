@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../redux/slice/ModalSlice';
+import Modalcontent from './Modalcontent/Modalcontent';
 
 export default function Modal() {
   const dispatch = useDispatch();
@@ -28,7 +29,9 @@ export default function Modal() {
               </div>
               <hr />
             </header>
-            <div className='modal_body'></div>
+            <div className='modal_body'>
+              <Modalcontent/>
+            </div>
             <div className='modal_footer'>
               <button>Reset</button>
               <button className='btn-rouge'>Action</button>

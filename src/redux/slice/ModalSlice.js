@@ -18,6 +18,12 @@ const modalSlice = createSlice({
     openModal: (state) => {
       state.isOpen = true;
     },
+    // actionModal: (state) => {
+    //     state.action = {
+    //         read:'read',
+    //         update:'update'
+    //     };
+    // }
   },
 });
 
