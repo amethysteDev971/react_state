@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  padding-top: 60px;
 }
 
 .logo {
@@ -133,4 +134,41 @@
 
 .f-center {
   justify-content: center;
+}
+
+#nav{
+  position: fixed;
+  z-index: 999;
+  background-color: #f21414bd;
+  width: 100dvw;
+  top: 0;
+  left: 0;
+  height: 60px;
+  display: flex;
+}
+
+.flex-nav{
+  display: flex;
+  justify-content: space-evenly;
+  color: aliceblue;
+  align-items: center;
+  height: 100%;
+  width: 300px;
+}
+.logo{
+  height: 20px;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 900;
+}
+
+.container_nav a{
+  color: aliceblue;
+}
+
+.container_nav a.active{
+  color: rgb(255, 255, 255);
+  font-weight: 800;
 }
