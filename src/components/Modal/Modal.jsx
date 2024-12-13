@@ -34,7 +34,7 @@ export default function Modal() {
               <button className='btn-rouge' onClick={(event) => {
                 console.log('Close button clicked'); 
                 event.stopPropagation(); 
-                handleCloseModal(); }}>X</button>
+                handleCloseModal(); }}><span>X</span></button>
             </div>
                 {readTask && <ReadTaskModal/>}
               

@@ -90,6 +90,27 @@
   position: absolute;
   top : 20px;
   right: 20px;
+  z-index: 20;
+}
+
+.modal_close button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Taille adaptée au design */
+  height: 40px; /* Taille adaptée au design */
+  padding: 0; /* Supprime les marges internes */
+  /* border: none; */
+  cursor: pointer;
+}
+
+.modal_close span {
+  position: absolute; /* Supprimez ceci si non nécessaire */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Facultatif pour éviter les conflits avec les clics */
 }
 
 .flex-inline{
