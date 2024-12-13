@@ -174,7 +174,7 @@ const taskSlice = createSlice({
       if (typeof payload === "boolean") {
         const {list} = state
         const newlist = list.map((task) => {
-          if (task.id = id) {
+          if (task.id == id) {
             return task = {
               ...task,
               completed: value

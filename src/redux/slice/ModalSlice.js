@@ -20,7 +20,7 @@ const modalSlice = createSlice({
     openModal: (state) => {
       state.isOpen = true
     },
-    openReadModal: (state, {payload}) =>{
+    openReadModal: (state) =>{
         state.isOpen = true
         state.readTask = true
     },

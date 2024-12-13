@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeModal } from '../../../redux/slice/ModalSlice'
 import { setCompletedTask, clearSelectedTask, deleteTask } from '../../../redux/slice/TaskSlice'
+import './ReadTaskModal.css'
 
 export default function ReadTaskModal() {
 
@@ -32,25 +33,24 @@ export default function ReadTaskModal() {
     
   }
 
-
   return (
     <>
-      {/* <header>
-              <h1>Hello Modal</h1>
-              
-              <hr />
-            </header>
-            <div className='modal_body'></div> */}
-      
-      <div className='modal_content_2'>
-        <h2>{title} {isChecked && ' : TERMINé'}</h2>
-        <p>{description}</p>
-        <input type="checkbox" onChange={() => checkHandler()} checked={isChecked} name='' id='checkbox' />
-        <div>
-          <button type='button' onClick={() => handleEdit()}>Modifier</button>
-          <button type='button' onClick={() => handleCompleted(isChecked, id)}>Valider</button>
-          <button type='button' onClick={() => handleDelete(id)}>Supprimer</button>
+      <header>
+        <h1>{title} {isChecked && ' : TERMINé'}</h1>   
+        <hr />
+      </header>    
+      <div className='modal_body'>
+        <div className='modal_content_2'>
+          <p>{description}</p>
+          <div className='flex-inline f-center'>
+            <input type="checkbox" onChange={() => checkHandler()} checked={isChecked} name='completed' id='checkbox'/><label htmlFor="radio">Tâche terminée</label>
+          </div>
         </div>
+      </div>
+      <div className='modal_footer'>
+            <button className='btn-gris' type='button' onClick={() => handleEdit()}>Modifier</button>
+            <button className='btn-vert ' type='button' onClick={() => handleCompleted(isChecked, id)}>Valider</button>
+            <button className='btn-rouge ' type='button' onClick={() => handleDelete(id)}>Supprimer</button>
       </div>
     </>
   )

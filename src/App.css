@@ -59,6 +59,7 @@
 }
 
 .modal{
+  position: relative;
   height: 60%;
   max-width: 900px;
   background-color: rgb(30, 28, 28);
@@ -66,7 +67,7 @@
   width: 90dvw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 2em;
 }
 
@@ -81,10 +82,14 @@
   position: relative;
 }
 
+.modal_body{
+  height: 90%;
+}
+
 .modal_close{
   position: absolute;
-  top : 0;
-  right: 0;
+  top : 20px;
+  right: 20px;
 }
 
 .flex-inline{
@@ -95,4 +100,16 @@
 
 .btn-rouge {
   background-color: rgb(198, 61, 61);
+}
+
+.btn-vert {
+  background-color: rgb(53, 130, 23);
+}
+
+.btn-gris {
+  background-color: rgb(105, 116, 101);
+}
+
+.f-center {
+  justify-content: center;
 }
