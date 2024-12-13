@@ -153,12 +153,27 @@ const taskSlice = createSlice({
       const id = payload
       const {list} = state
       const selectedTask = list.find((task) => task.id == id)
+      
       state.selectedTask = selectedTask
+      console.log('selectedTask:',{list})
     },
     clearSelectedTask: (state) => {
       state.selectedTask = null
     },
-    updateTask: (state, {payload}) => {},
+    updateTask: (state, {payload}) => {
+      console.log('updateTask')
+      console.log(payload)
+      const {list} = state
+      console.log(list)
+      const newlist = list.map((task) => {
+        if (task.id == payload.id) {
+          return task = payload
+        } else {
+          return task
+        }
+      })
+      state.list = newlist
+    },
     deleteTask: (state, {payload}) => {
         const id = payload
         console.log('id => ', id)
